@@ -1,0 +1,153 @@
+.navbar {
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(252, 231, 243, 0.95) 0%,
+    rgba(250, 232, 255, 0.95) 50%,
+    rgba(224, 231, 255, 0.95) 100%
+  );
+  backdrop-filter: blur(15px);
+  transition: all 0.4s ease;
+  position: relative;
+  padding: 15px 32px;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 200px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  font-size: 17px;
+  font-weight: 600;
+  color: #4c1d95;
+  cursor: pointer;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #ec4899, #c084fc);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.nav-links button:hover::after {
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 34px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.menu-btn span {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #ec4899, #c084fc);
+  border-radius: 8px;
+  transition: 0.4s ease;
+}
+
+.menu-btn span.close:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.menu-btn span.close:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn span.close:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+@media (max-width: 900px) {
+  .menu-btn {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    padding: 20px 15px;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links button {
+    font-size: 18px;
+    color: #6b21a8;
+  }
+
+  .nav-links button::after {
+    height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 10px 20px;
+    gap: 30px;
+  }
+
+  .logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .nav-links button {
+    font-size: 16px;
+  }
+}
