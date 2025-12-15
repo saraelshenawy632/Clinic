@@ -152,6 +152,8 @@ export default function ContactInfo() {
           <i className="fab fa-whatsapp fa-lg"></i>
         </div>
       </a>
+         <br />
+
     </>
   );
 }
